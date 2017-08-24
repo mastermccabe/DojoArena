@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dojo Arena</title>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $('#beach').hover(function() {
+        $('body').css({
+          'background-image': 'url("beach.jpg")'
+        });
+      })
+
+      $('#beach, #planet, #dojo, #forest, #matrix, #snow').click(function() {
+        $('h1').html('Select Players')
+        $('.options').html('<select id="1"><option>Select Player 1</option><option>Donny</option><option>Leo</option><option>Mikey</option><option>Raphael</option></select>')
+        $('.options').append('<select id="2"><option>Select Player 2</option><option>Donny</option><option>Leo</option><option>Mikey</option><option>Raphael</option></select>')
+      })
+
+      $('#planet').hover(function() {
+        $('body').css({
+          'background-image': 'url("earth.jpg")'
+        });
+      })
+
+      $('#dojo').hover(function() {
+        $('body').css({
+          'background-image': 'url("dojo.jpg")'
+        });
+      })
+
+      $('#forest').hover(function() {
+        $('body').css({
+          'background-image': 'url("forest.jpg")'
+        });
+      })
+
+      $('#matrix').hover(function() {
+        $('body').css({
+          'background-image': 'url("matrix.jpg")'
+        });
+      })
+
+      $('#snow').hover(function() {
+        $('body').css({
+          'background-image': 'url("snow.jpg")'
+        });
+      })
+
+      $(document).on('change', '#1', function() {
+        var name = $(this).find('option:selected').text();
+        if (name === "Donny") {
+          $('.first_character').html('<img src="donny.png"/>');
+        } else if (name === "Leo") {
+          $('.first_character').html('<img src="leo.png"/>');
+        } else if (name === "Mikey") {
+          $('.first_character').html('<img src="mikey.png"/>');
+        } else if (name === "Raphael") {
+          $('.first_character').html('<img src="raphael.png"/>');
+        }
+
+      })
+
+      $(document).on('change', '#2', function() {
+        var name = $(this).find('option:selected').text();
+        if (name === "Donny") {
+          $('.second_character').html('<img src="donny.png"/>');
+        } else if (name === "Leo") {
+          $('.second_character').html('<img src="leo.png"/>');
+        } else if (name === "Mikey") {
+          $('.second_character').html('<img src="mikey.png"/>');
+        } else if (name === "Raphael") {
+          $('.second_character').html('<img src="raphael.png"/>');
+        }
+      })
+
+    })
+  </script>
+  <style media="screen">
+    body {
+      background-color: black;
+      background-image: none;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .select_arena {
+      width: 300px;
+      height: 200px;
+      background-color: grey;
+      margin-left: 34%;
+      margin-top: 200px;
+      text-align: center;
+    }
+
+
+    button {
+      width: 90px;
+      display: inline-block;
+    }
+
+    .wrapper {
+      display: inline-block;
+      text-align: center;
+    }
+
+    #player_box_1 {
+      display: inline-block;
+      text-align: left;
+      margin-left: 100px;
+    }
+
+    #player_box_1 img {
+      width: 50%;
+    }
+
+    #player_box_2 {
+      display: inline-block;
+      margin-left: 300px;
+    }
+
+    #player_box_2 img {
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="select_arena">
+    <h1>Select Arena</h1>
+    <div class="options">
+      <button id="beach">beach</button>
+      <button id="planet">planet</button>
+      <button id="dojo">dojo</button>
+      <button id="forest">forest</button>
+      <button id="matrix">matrix</button>
+      <button id="snow">snow</button>
+    </div>
+
+  </div>
+  <div class="wrapper">
+    <div class="first_character" id="player_box_1"></div>
+    <div class="second_character" id="player_box_2"></div>
+  </div>
+
+
+</body>
+
+</html>
